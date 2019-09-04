@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Олег Пивкин](https://up.htmlacademy.ru/htmlcss/26/user/1007589).
-* Наставник: `Геннадий Максимов`.
+* Наставник: [Геннадий Максимов](https://htmlacademy.ru/profile/gennadiy).
 
 ---
 
