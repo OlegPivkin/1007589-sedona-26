@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
 
@@ -14,170 +17,171 @@
           <li class="main-nav__item">
             <a class="main-nav__link" href="#nowhere">Информация</a>
           </li>
-          <li>
+          <li class="main-nav__item">
             <a class="main-nav__link" href="#nowhere">Фото и видео</a>
           </li>
           <li class="main-nav__item">
             <a class="main-nav__link" href="#nowhere">Карта штата</a>
           </li>
           <li class="main-nav__item">
-            <a class="main-nav__link" href="#nowhere">Гостиницы</a>
+            <a class="main-nav__link">Гостиницы</a>
           </li>
         </ul>
         <a class="main-nav__logo" href="index.html">
-		      <img src="img/sedona_logo.png" width="368" height="153" alt="Логотип «Седона»">
+		      <img src="img/logo_sedona.svg" width="140" height="72" alt="Логотип «Седона»">
         </a>
       </nav>
     </header>
+  
+    <main>
+      <h1 class="visually-hidden">Поиск гостинниц</h1>
+      <form class="filter-form">
+        <fieldset class="checkbox-area">
+          <legend class="checkbox-area__title">Инфраструктура:</legend>
+          <input class="visually-hidden" type="checkbox" id="swimming-pool" name="swimming-pool" checked>
+          <label class="checkbox-area__label" for="swimming-pool">Бассейн</label>
+          <input class="visually-hidden" type="checkbox" id="parking" name="parking">
+          <label class="checkbox-area__label" for="parking">Парковка</label>
+          <input class="visually-hidden" type="checkbox" id="wi-fi" name="wifi">
+          <label class="checkbox-area__label" for="wi-fi">Wi-Fi</label>
+        </fieldset>
 
-    <main class="hotels-content">
-      <section class="hotels-content__filter">
-          <h1 class="visually-hidden">Фильтр по выбору гостиниц</h1>
-          <form class="hotels-content__filter-form filter-form">
-            <div class="filter-form__checkbox-list checkbox-list">
-              <h2 class="checkbox-list__title">Инфраструктура:</h2>
-              <input type="checkbox" class="checkbox-list__checkbox" id="swimming-pool" name="swimming-pool" checked="">
-              <label class="checkbox-list__item" for="swimming-pool" tabindex="0">Бассейн</label>
-              <input type="checkbox" class="checkbox-list__checkbox" id="parking" name="parking">
-              <label class="checkbox-list__item" for="parking" tabindex="0">Парковка</label>
-              <input type="checkbox" class="checkbox-list__checkbox" id="wifi" name="wifi">
-              <label class="checkbox-list__item" for="wifi" tabindex="0">Wi-Fi</label>
-            </div>
-
-            <div class="filter-form__checkbox-list checkbox-list">
-              <h2 class="checkbox-list__title">Тип жилья:</h2>
-              <input type="checkbox" class="checkbox-list__checkbox" id="hotel" name="hotel" checked="">
-              <label class="checkbox-list__item checkbox-list__item_type" for="hotel" tabindex="0">Гостиница</label>
-              <input type="checkbox" class="checkbox-list__checkbox" id="motel" name="motel" checked="">
-              <label class="checkbox-list__item checkbox-list__item_type" for="motel" tabindex="0">Мотель</label>
-              <input type="checkbox" class="checkbox-list__checkbox" id="apartment" name="apartment" checked="">
-              <label class="checkbox-list__item checkbox-list__item_type" for="apartment" tabindex="0">Апартаменты</label>
-            </div>
-
-            <div class="filter-form__price-day price-day">
-              <h2 class="price-day__title">Стоимость в сутки (Р):</h2>
-              <div class="price-day__prices">
-                <label class="min-price">
-                от
-                <input class="price-day__min" type="text" name="min-price" pattern="^[ 0-9]+$" value="0">
-                </label>
-                <label class="max-price">
-                до
-                <input class="price-day__max" type="text" name="max-price" pattern="^[ 0-9]+$" value="3000">
-                </label>
-              </div>
-              <div class="price-day__range-field">
-                <button type="button" class="range-field__button range-field__button_min"></button>
-                <button type="button" class="range-field__button range-field__button_max"></button>
-              </div>
-              <button type="submit" class="filter-form__button button">Показать</button>
-            </div>
-          </form>
-      </section>
-
-      <div class="searching-head">
-          <h2 class="searching-head__result">Найдено: 3</h2>
-          <h3 class="searching-head__title">Сортировка:</h3>
-          <ul class="searching-head__sort-list sort-list">
-            <li class="sort-list__item sort-list__item_current">
-              <input class="visually-hidden searching-head__radio" type="radio" name="searching-sort-item" value="by-price" id="by-price" checked="">
-              <label class="searching-head__label" for="by-price" tabindex="0">По цене</label>
-            </li>
-            <li class="sort-list__item">
-              <input class="visually-hidden searching-head__radio" type="radio" name="searching-sort-item" value="by-type" id="by-type">
-              <label class="searching-head__label" for="by-type" tabindex="0">По типу</label>
-            </li>
-            <li class="sort-list__item">
-              <input class="visually-hidden searching-head__radio" type="radio" name="searching-sort-item" value="by-rate" id="by-rate">
-              <label class="searching-head__label" for="by-rate" tabindex="0">По рейтингу</label>
-            </li>
-          </ul>
-          <div class="searching-head__toggle">
-            <button class="searching-head__button" type="button"></button>
-            <button class="searching-head__button searching-head__button_active" type="button"></button>
+        <fieldset class="checkbox-area">
+          <legend class="checkbox-area__title">Тип жилья:</legend>
+          <input class="visually-hidden"  type="checkbox" id="hotel" name="hotel" checked>
+          <label class="checkbox-area__label" for="hotel">Гостиница</label>
+          <input class="visually-hidden" type="checkbox" id="motel" name="motel" checked>
+          <label class="checkbox-area__label" for="motel">Мотель</label>
+          <input class="visually-hidden" type="checkbox" id="apartment" name="apartment" checked>
+          <label class="checkbox-area__label " for="apartment">Апартаменты</label>
+        </fieldset>
+  
+        <fieldset class="price-day">
+          <legend class="price-day__title">Стоимость в сутки (Р):</legend>
+          <div class="price-day__prices">
+            <label class="price-day__label">от
+              <input class="price-day__input" type="text" name="min-price" pattern="^[ 0-9]+$" value="0">
+            </label>
+            <label class="price-day__label">
+              до
+              <input class="price-day__input" type="text" name="max-price" pattern="^[ 0-9]+$" value="3000">
+            </label>
           </div>
-      </div>
+          <div class="range-filter">
+            <div class="range-filter__controls">
+              <div class="range-filter__scale">
+                <div class="range-filter__bar"></div>
+              </div>
+              <button class="range-filter__toggle-min" type="button"></button>
+              <button class="range-filter__toggle-max" type="button"></button>
+            </div>
+          </div>
+          <button class="price-day__button" type="submit">Показать</button>
+        </fieldset>
+      </form>
 
-      <section class="hotels-content__hotels hotels">
+      <section class="hotels">
         <h2 class="visually-hidden">Список гостиниц</h2>
-        <div class="hotels__hotel hotel">
-          <img class="hotel__image img-block" src="img/amara_resort.jpg" width="135" height="90" alt="Amara Resort & Spa">
-          <div class="hotel__info">
-            <h2 class="hotel__title">
-              <a href="#" class="hotel__title-link">Amara Resort & Spa</a>
-            </h2>
-          <div class="hotel__column">
-            <p class="hotel__mode">Гостиница</p>
-            <a href="#" class="hotel__link button">Подробнее</a>
+        
+        <div class="searching-nav">
+          <h2 class="searching-nav__title">Найдено: 3</h2>
+          <div class="searching-nav__sort">
+            <p class="searching-nav__sort-title">Сортировка:</p>
+            <div class="searching-nav__sort-container">
+              <a class="searching-nav__link searching-nav__link--active" href="#nowhere">По цене</a>
+              <a class="searching-nav__link" href="#nowhere">По типу</a>
+              <a class="searching-nav__link" href="#nowhere">По рейтингу</a>
+            </div>
           </div>
-          <div class="hotel__column">
-            <p class="hotel__price">от 4000 Р.</p>
-            <a href="#" class="hotel__link hotel__link_theme_reserved button">Забронировать</a>
-          </div>
-          </div>
-          <div class="hotel__prestige">
-            <ul class="hotel__stars-list">
-              <li class="hotel__star">
-              <li class="hotel__star">
-              <li class="hotel__star">
-              <li class="hotel__star">
-              <li class="hotel__star hotel__star_disabled">
-            </ul>
-            <p class="hotel__rate">Рейтинг: 8,5</p>
+          <div class="searching-nav__toggles">
+            <a class="searching-nav__toggle-up" href="#nowhere" aria-label="По возрастанию"></a>
+            <a class="searching-nav__toggle-down" href="#nowhere" aria-label="По убыванию"></a>
           </div>
         </div>
-          <div class="hotels__hotel hotel">
-            <img class="hotel__image img-block" src="img/desert_quail.jpg" width="135" height="90" alt="Desert Quail Inn">
-            <div class="hotel__info">
-              <h2 class="hotel__title">
-                <a href="#" class="hotel__title-link">Desert Quail Inn</a>
-              </h2>
-            <div class="hotel__column">
-              <p class="hotel__mode">Мотель</p>
-              <a href="#" class="hotel__link button">Подробнее</a>
+        
+        <ul class="hotels__list">
+          <li class="hotel">
+            <img class="hotel__image" src="img/amara_resort.jpg" width="135" height="90" alt="Amara Resort & Spa">
+            <div class="hotel__info-container">
+              <a class="hotel__title" href="#nowhere">
+                  <h2>Amara Resort &amp; Spa</h2>
+                </a>
+                <div class="hotel__row-conteiner">
+                  <p class="hotel__mode">Гостиница</p>
+                <p class="hotel__price">от 4000 Р.</p>
+                </div>
+              <div class="hotel__row-conteiner">
+                <a class="hotel__button" href="#nowhere">Подробнее</a>
+                <a class="hotel__button hotel__button--brown" href="#nowhere">Забронировать</a>
+              </div>
             </div>
-            <div class="hotel__column">
-              <p class="hotel__price">от 3000 Р.</p>
-              <a href="#" class="hotel__link hotel__link_theme_reserved button">Забронировать</a>
+            
+            <div class="hotel__prestige">
+              <span class="visually-hidden">Количество звёзд 4</span>
+              <ul class="hotel__stars-list">
+                <li class="hotel__star"></li>
+                <li class="hotel__star"></li>
+                <li class="hotel__star"></li>
+                <li class="hotel__star"></li>
+              </ul>
+              <p class="hotel__rate">Рейтинг: 8,5</p>
             </div>
-          </div>
-          <div class="hotel__prestige">
-            <ul class="hotel__stars-list">
-              <li class="hotel__star">
-              <li class="hotel__star">
-              <li class="hotel__star">
-              <li class="hotel__star hotel__star_disabled">
-              <li class="hotel__star hotel__star_disabled">
-            </ul>
-            <p class="hotel__rate">Рейтинг: 8,9</p>
-          </div>
-        </div>
-        <div class="hotels__hotel hotel">
-          <img class="hotel__image img-block" src="img/villas_at_poco_diablo.jpg" width="135" height="90" alt="Villas at Poco Diablo">
-          <div class="hotel__info">
-            <h2 class="hotel__title">
-              <a href="#" class="hotel__title-link">Villas at Poco Diablo</a>
-            </h2>
-            <div class="hotel__column">
-              <p class="hotel__mode">Апартаменты</p>
-              <a href="#" class="hotel__link button">Подробнее</a>
+          </li>
+          
+          <li class="hotel">
+            <img class="hotel__image" src="img/desert_quail.jpg" width="135" height="90" alt="Desert Quail Inn">
+            <div class="hotel__info-container">
+              <a class="hotel__title" href="#nowhere">
+                  <h2>Desert Quail Inn</h2>
+                </a>
+                <div class="hotel__row-conteiner">
+                  <p class="hotel__mode">Гостиница</p>
+                <p class="hotel__price">от 3000 Р.</p>
+                </div>
+              <div class="hotel__row-conteiner">
+                <a class="hotel__button" href="#nowhere">Подробнее</a>
+                <a class="hotel__button hotel__button--brown" href="#nowhere">Забронировать</a>
+              </div>
             </div>
-            <div class="hotel__column">
-              <p class="hotel__price">от 2000 Р.</p>
-              <a href="#" class="hotel__link hotel__link_theme_reserved button">Забронировать</a>
+            
+            <div class="hotel__prestige">
+              <span class="visually-hidden">Количество звёзд 3</span>
+              <ul class="hotel__stars-list">
+                <li class="hotel__star"></li>
+                <li class="hotel__star"></li>
+                <li class="hotel__star"></li>
+              </ul>
+              <p class="hotel__rate">Рейтинг: 8,9</p>
             </div>
-          </div>
-          <div class="hotel__prestige">
-            <ul class="hotel__stars-list">
-              <li class="hotel__star">
-              <li class="hotel__star">
-              <li class="hotel__star hotel__star_disabled">
-              <li class="hotel__star hotel__star_disabled">
-              <li class="hotel__star hotel__star_disabled">
-            </ul>
-            <p class="b-hotel__rate">Рейтинг: 9,2</p>
-          </div>
-        </div>
+          </li>
+
+          <li class="hotel">
+            <img class="hotel__image" src="img/villas_at_poco_diablo.jpg" width="135" height="90" alt="Villas at Poco Diablo">
+            <div class="hotel__info-container">
+              <a class="hotel__title" href="#nowhere">
+                  <h2>Villas at Poco Diablo</h2>
+                </a>
+                <div class="hotel__row-conteiner">
+                  <p class="hotel__mode">Гостиница</p>
+                <p class="hotel__price">от 2000 Р.</p>
+                </div>
+              <div class="hotel__row-conteiner">
+                <a class="hotel__button" href="#nowhere">Подробнее</a>
+                <a class="hotel__button hotel__button--brown" href="#nowhere">Забронировать</a>
+              </div>
+            </div>
+            
+            <div class="hotel__prestige">
+              <span class="visually-hidden">Количество звёзд 3</span>
+              <ul class="hotel__stars-list">
+                <li class="hotel__star"></li>
+                <li class="hotel__star"></li>
+              </ul>
+              <p class="hotel__rate">Рейтинг: 9,2</p>
+            </div>
+          </li>
+        </ul>
+
       </section>
     </main>
 
@@ -185,19 +189,31 @@
       <p class="main-footer__hashtag">#VisitSedona</p>
       <ul class="social-list">
         <li class="social-list__item">
-          <a class="social-list__link" href="#" aria-label="Наш твиттер"></a>
+          <a class="social-list__link" href="#" aria-label="Наш твиттер">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="15" viewBox="0 0 17 15"><path fill="#FFF" d="M10.95.144c1.685-.496 2.984.27 3.577 1.179.673-.231 1.331-.481 2.011-.708a2.345 2.345 0 0 1-.857 1.768c.685.17 1.304-.491 1.304-.491-.169 1-1.006 1.788-1.563 2.024-.231 6.75-3.175 11.217-10.077 11.082h-.446c-.41 0-4.164-.46-4.898-1.887 2.271.196 3.893-.422 4.693-1.177-.96-.3-2.679-.477-2.979-2.95.349.106.564.228 1.19.119C1.705 8.247.374 7.53.448 5.33c.285.328 1.067.536 1.34.472C1.085 5.561-.182 2.442.894.85c1.818 1.854 3.735 3.606 7.152 3.773C8.254 2.33 9.183.793 10.95.144z"/></svg>
+          </a>
         </li>
         <li class="social-list__item">
-          <a class="social-list__link" href="#" aria-label="Наш фейсбук"></a>
+          <a class="social-list__link" href="#" aria-label="Наш фейсбук">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="22" viewBox="0 0 12 22">
+              <path fill="#FFF" d="M12 4V0H8a4 4 0 0 0-4 4v4H0v4h4v10h4V12h4V8H8V4h4z"/>
+            </svg>
+          </a>
         </li>
         <li class="social-list__item">
-          <a class="social-list__link" href="#" aria-label="Наш Ютюб"></a>
+          <a class="social-list__link" href="#" aria-label="Наш ютуб">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="16" viewBox="0 0 20 16">
+              <path fill="#FFF" d="M17 0H3C1.35 0 0 1.35 0 3v10c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3zM6.027 11.998V4.002L15.014 8l-8.987 3.998z"/>
+            </svg>
+          </a>
         </li>
       </ul>
       
       <p class="copyright">
         <span>Website by</span>
-        <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">htmlacademy</a>
+        <a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="115" height="41" viewBox="0 0 115 41"><g><g><image width="115" height="41" xlink:href="data:image/png;base64,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"/></g></g></svg>
+        </a>
       </p>
     </footer>
   </div>
