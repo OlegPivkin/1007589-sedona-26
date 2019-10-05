@@ -1,6 +1,15 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
 body {
+  margin: 0;
   padding: 0;
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", Arial, sans-serif;
   font-size: 14px;
   line-height: 21px;
   font-weight: 400;
@@ -25,24 +34,22 @@ input {
 }
 
 .page-wrapper {
-  max-width: 1200px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 0 0 20px 3px #dadada;
+  box-shadow: 0px 5px 15px 0px rgba(0, 1, 1, 0.2);
 }
 
+/*Header*/
 .main-header {
+  position: relative;
   background-color: #ffffff;
 }
 
 .main-nav__logo {
   position: absolute;
-  text-align: center;
-  width: 244px;
-  height: 71px;
-  margin-left: -122px;
-  left: 50%;
-  z-index: 1;
+  top: 0;
+  left: 44.6%;
 }
 
 .main-nav {
@@ -70,22 +77,23 @@ input {
   margin-right: 244px;
 }
 
-.main-nav__link {
+.main-nav__link[href] {
   color: #000000;
 }
 
-.main-nav__link:focus,
-.main-nav__link:hover {
+.main-nav__link[href]:focus,
+.main-nav__link[href]:hover {
   color: #81b3d2;
 }
 
-.main-nav__link:active {
+.main-nav__link[href]:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/*.main-nav__list {*/
-/*  color: #766357;*/
-/*} *!*/
+.main-nav__link {
+  color: #766357;
+  font-weight: 700;
+}
 
 .visually-hidden {
   position: absolute;
@@ -98,6 +106,7 @@ input {
   overflow: hidden;
 }
 
+/*index.html*/
 .content {
   background-color: #ffffff;
   width: 1200px;
@@ -347,7 +356,7 @@ input {
   color: rgba(255, 255, 255, 0.3);
 }
 
-/*вторая страница*/
+/*hotels.html*/
 .filter-form {
   display: flex;
   background-image: url("../img/filter_background.jpg");
@@ -534,7 +543,7 @@ input:checked {
 }
 
 .searching-nav__link {
-  ont-size: 12px;
+  font-size: 12px;
   line-height: 18px;
   text-transform: uppercase;
   margin-left: 28px;
@@ -563,6 +572,38 @@ input:checked {
   color: #81b3d2;
   border: none;
 }
+
+.searching-nav__toggles {
+  box-sizing: border-box;
+  padding-top: 6px;
+}
+
+.searching-nav__toggle-up {
+  background-image: url("../img/icon_up_dir.svg");
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.searching-nav__toggle-down {
+  background-image: url("../img/icon_down_dir.svg");
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 10px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+/*.searching-nav__toggle-up:hover path,*/
+/*.searching-nav__toggle-up:focus path {*/
+/*  fill: #cacaca;*/
+/*}*/
+
+/*.searching-nav__toggle-down:active path {*/
+/*  fill: #81b3d2;*/
+/*}*/
 
 .hotels {
   width: 1200px;
