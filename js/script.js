@@ -1,8 +1,11 @@
-var popapSearch = document.querySelector(".map-and-search__form-container");
+"use strict"
+
+var popapSearch = document.querySelector(".search-form");
 var popapBtn = document.querySelector(".map-and-search__btn");
 
-popapSearch.classList.add("hidden");
+function onClickPopapBtn(evt) {
+  evt.preventDefault();
+  popapSearch.classList.toggle("search-form--opened");
+} 
 
-popapBtn.addEventListener("click", function () {
-  popapSearch.classList.toggle("hidden");
-});
+popapBtn.addEventListener("click", onClickPopapBtn);
