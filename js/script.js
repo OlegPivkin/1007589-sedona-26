@@ -1,11 +1,29 @@
-"use strict"
+(function () {
+  var popapSearch = document.querySelector(".search-form");
+  var popapBtn = document.querySelector(".map-and-search__btn");
 
-var popapSearch = document.querySelector(".search-form");
-var popapBtn = document.querySelector(".map-and-search__btn");
+  function onClickPopapBtn(evt) {
+    evt.preventDefault();
+    popapSearch.classList.toggle("search-form--closed");
+  } 
 
-function onClickPopapBtn(evt) {
-  evt.preventDefault();
-  popapSearch.classList.toggle("search-form--opened");
-} 
+  popapBtn.addEventListener("click", onClickPopapBtn);
+})();
 
-popapBtn.addEventListener("click", onClickPopapBtn);
+(function () {
+ymaps.ready(init);
+
+function init() {
+  var myMap = new ymaps.Map("map", {
+    center: [34.90165716, -111.76700252],
+    zoom: 10
+  }, {
+    searchControlProvider: 'yandex#search'
+  });
+  
+  myMap.geoObjects
+    .add(new ymaps.Placemark([34.90165716, -111.76700252],{}, {
+        preset: 'islands#redDotIconWithCaption'
+    }));
+  }
+})();
