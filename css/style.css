@@ -603,6 +603,32 @@ input[type="radio"].visually-hidden {
   box-shadow: none;
 }
 
+.search-form--error {
+  animation: shake 0.6s;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
 .search-form__date-in,
 .search-form__date-out {
   position: relative;
@@ -1664,24 +1690,24 @@ input[type="checkbox"]:checked:disabled + .checkbox-area__label {
   margin: 0;
 }
 
-.copyright a {
+.copyright__link {
   width: 115px;
   height: 41px;
 }
 
-.copyright a:focus {
+.copyright__link:focus {
   outline: none;
 }
 
-.copyright a:hover path {
+.copyright__link:hover path {
   transition: fill 0.2s ease;
 }
 
-.copyright a:hover path,
-.copyright a:focus path {
+.copyright__link:hover path,
+.copyright__link:focus path {
   fill: #81b3d2;
 }
 
-.copyright a:active path {
+.copyright__link:active path {
   fill: #bdbbbc;
 }
